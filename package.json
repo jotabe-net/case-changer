@@ -2,7 +2,7 @@
     "name": "case-changer",
     "displayName": "JotaBe Case Changer",
     "description": "Change the case of the selected case to any of the casing supported by change-case ('CamelCase', 'Capital Case', 'CONSTANT_CASE', 'dot.case', 'Header-Case', 'no case', 'param-case', 'PascalCase', 'path/case', 'Sentence case', 'snake_case')",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "repository": "https://github.com/jotabe-net/jotabe-change-case.git",
     "publisher": "JotaBe",
     "engines": {
@@ -18,6 +18,10 @@
             {
                 "command": "jotaBe.nextCase",
                 "title": "JotaBe: Change text to next case"
+            },
+            {
+                "command": "jotaBe.changeCaseTo",
+                "title": "JotaBe: Change case to..."
             }
         ],
         "keybindings": {
@@ -54,7 +58,7 @@
                         "description": "'CamelCase', 'Capital Case', 'CONSTANT_CASE', 'dot.case', 'Header-Case', 'no case', 'param-case', 'PascalCase', 'path/case', 'Sentence case', 'snake_case'",
                         "enumDescriptions": [
                             "thisIsACamelCaseExample",
-                            "This Is A Camel Case Example",
+                            "This Is A Capital Case Example",
                             "THIS_IS_A_CONSTANT_CASE_EXAMPLE",
                             "this.is.a.dot.case.example",
                             "This-Is-A-Header-Case-Example",
