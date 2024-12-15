@@ -1,0 +1,86 @@
+{
+    "name": "case-changer",
+    "displayName": "JotaBe Case Changer",
+    "description": "Change the case of the selected case to any of the casing supported by change-case ('CamelCase', 'Capital Case', 'CONSTANT_CASE', 'dot.case', 'Header-Case', 'no case', 'param-case', 'PascalCase', 'path/case', 'Sentence case', 'snake_case')",
+    "version": "0.1.0",
+    "repository": "https://github.com/jotabe-net/jotabe-change-case.git",
+    "publisher": "JotaBe",
+    "engines": {
+        "vscode": "^1.95.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "jotaBe.nextCase",
+                "title": "JotaBe: Change text to next case"
+            }
+        ],
+        "keybindings": {
+            "key": "Ctrl+U",
+            "command": "jotaBe.nextCase",
+            "when": "editorTextFocus"
+        },
+        "configuration": {
+            "title": "JotaBe Case Changer",
+            "properties": {
+                "jotaBe.caseChanger": {
+                    "type": "array",
+                    "default": [
+                        "camelCase",
+                        "PascalCase"
+                    ],
+                    "description": "The 'Change text to next case' command will cycle over the casings of this list in the specified order. Support per language setting under '[language]' sections",
+                    "scope": "language-overridable",
+                    "items": {
+                        "type":"string",
+                        "enum": [
+                            "camelCase",
+                            "capitalCase",
+                            "constantCase",
+                            "dotCase",
+                            "headerCase",
+                            "noCase",
+                            "paramCase",
+                            "pascalCase",
+                            "pathCase",
+                            "sentenceCase",
+                            "snakeCase"
+                        ],
+                        "description": "'CamelCase', 'Capital Case', 'CONSTANT_CASE', 'dot.case', 'Header-Case', 'no case', 'param-case', 'PascalCase', 'path/case', 'Sentence case', 'snake_case'",
+                        "enumDescriptions": [
+                            "thisIsACamelCaseExample",
+                            "This Is A Camel Case Example",
+                            "THIS_IS_A_CONSTANT_CASE_EXAMPLE",
+                            "this.is.a.dot.case.example",
+                            "This-Is-A-Header-Case-Example",
+                            "this is a no case example",
+                            "this-is-a-param-case-example",
+                            "ThisIsAPascalCaseExample",
+                            "this/is/a/path/case/example",
+                            "This is a sentence case example",
+                            "this_is_a_snake_case_example"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "lint": "eslint \"src/**/*.ts\"",
+        "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.74.0",
+        "typescript": "^5.0.4"
+    },
+    "dependencies": {
+        "change-case": "^4.1.2"
+    }
+}
